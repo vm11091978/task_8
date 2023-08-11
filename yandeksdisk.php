@@ -46,7 +46,7 @@ class YDisk
 				 * Получить закрытый ресурс
 				 * @var  Arhitector\Yandex\Disk\Resource\Closed $resource
 				 */
-				$resource = $this->disk->getResource('disk:/', 10, 0);
+				$resource = $this->disk->getResource('disk:/', 100, 0);
 
 				// Передадим в перебирающую функцию яндекс-диск и папку, в которой нужно осуществить перебор элементов
 				// а также массив, в который эти элементы запишутся вложенно в виде дерева
@@ -71,7 +71,7 @@ class YDisk
 	
 	static function getAllFiles($disk, $folder, &$arResult)
 	{
-		$resource = $disk->getResource("$folder", 10, 0);
+		$resource = $disk->getResource("$folder", 100, 0);
 
 		foreach ($resource as $key => $value)
 		{
